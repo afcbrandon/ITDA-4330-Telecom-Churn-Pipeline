@@ -3,7 +3,7 @@ import pandas as pd
 
 def engineer_features(df):
     # Categorical Encoding
-    city_churn_map = df.groupby("City")["Churn Binary"].mean()
+    city_churn_map = df.groupby("City")["Churn_Binary"].mean()
     df["City_Target_Encoded"] = df["City"].map(city_churn_map)
 
     payment_freq = df["Payment Method"].value_counts(normalize=True)
